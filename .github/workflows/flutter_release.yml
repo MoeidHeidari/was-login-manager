@@ -36,11 +36,11 @@ jobs:
           fi
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3  # Updated to v3
         with:
           name: ${{ matrix.platform }}-release
           path: build/${{ matrix.platform }}/release/
-      
+
   create_release:
     needs: build
     runs-on: ubuntu-latest
